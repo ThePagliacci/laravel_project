@@ -57,9 +57,8 @@ class CommentsController extends Controller
             'user_id' => Auth::user()->id
         ]);
 
-        return redirect('/comments')->with('message', 'comment Added Successfully');
+        return redirect('/comments')->with('message', 'Yorum Başarıyla Eklendi');
     }
-
     /**
      * Display the specified resource.
      *
@@ -103,7 +102,7 @@ class CommentsController extends Controller
         $comment -> user_id = Auth::user()->id;
         
         $comment->save();
-        return redirect('/comments')->with('message', 'comment Edited Successfully');
+        return redirect('/comments')->with('message', 'Yorum Başarıyla Düzenlendi');
     }
 
     /**
@@ -117,6 +116,6 @@ class CommentsController extends Controller
         $comment = Comment::find($id);
         $comment->delete();
         
-        return redirect('/comments')->with('message', 'comment Deleted Successfully');
+        return redirect('/comments')->with('message', 'Yorum Başarıyla Silindi');
     }
 }
