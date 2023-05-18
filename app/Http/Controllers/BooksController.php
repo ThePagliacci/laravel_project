@@ -22,7 +22,7 @@ class BooksController extends Controller
 
     public function show($id)
     {
-        $book = Book::with('comments:user_id,book_id,description')->  //has many relationship
+        $book = Book::with('comments:user_id,book_id,description,created_at')->  //has many relationship
                             select('id', 'name', 'writer_id', 'image', 'genre_id')
                             ->find($id);
 

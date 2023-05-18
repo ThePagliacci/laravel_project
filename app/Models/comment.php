@@ -16,7 +16,8 @@ class comment extends Model
     protected $fillable = [
         'book_id',
         'user_id',
-        'description'
+        'description',
+        'created_at'
     ];
 
     /**
