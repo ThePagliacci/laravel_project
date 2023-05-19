@@ -19,10 +19,6 @@
 
     <link rel="stylesheet" href="{{asset('website')}}/css/style.css">
 </head>
-
-
-
-
 <body>
     <div class="site-wrap">
 
