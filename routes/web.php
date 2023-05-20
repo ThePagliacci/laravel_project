@@ -26,6 +26,10 @@ Route::middleware(['auth'])->prefix('comments')->group(function () { //kullanıc
     Route::delete('/{comment}/delete', [App\Http\Controllers\CommentsController::class,'destroy']);
 });
 
+Route::prefix('admin')->group(function () {
+    Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
+});
+
 Auth::routes();
 
 Route::resource('user', UserController::class);
