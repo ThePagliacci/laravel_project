@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/', function (){
     return view('welcome');
 });
@@ -28,6 +29,9 @@ Route::middleware(['auth'])->prefix('comments')->group(function () { //kullanıc
 
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
+    Route::get('book', [App\Http\Controllers\Admin\BooksController::class, 'index']);
+    Route::get('add-book', [App\Http\Controllers\Admin\BooksController::class, 'create']);
+    Route::post('add-book', [App\Http\Controllers\Admin\BooksController::class, 'store']);
 });
 
 Auth::routes();
