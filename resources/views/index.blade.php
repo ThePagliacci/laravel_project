@@ -1,6 +1,9 @@
 @extends('layouts.website')
 @section('content')
 
+@if (session('message'))
+<div class="alert alert-success">{{ session('message') }}</div>
+@endif
     <div class="site-section">
         <div class="container">
             <div class="row mb-5">

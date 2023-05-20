@@ -26,7 +26,7 @@ Route::middleware(['auth'])->prefix('comments')->group(function () { //kullanıc
     Route::delete('/{comment}/delete', [App\Http\Controllers\CommentsController::class,'destroy']);
 });
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
 });
 
