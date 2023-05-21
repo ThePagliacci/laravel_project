@@ -27,7 +27,7 @@
             <tbody>
                 @foreach ($writers as $writer)
                 <tr>
-
+ 
                 <td>{{ $writer->id }}</td>
                 <td>{{ $writer->name }}</td>
                 <td>

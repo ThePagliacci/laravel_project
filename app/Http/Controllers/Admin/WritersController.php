@@ -51,7 +51,7 @@ class WritersController extends Controller
 
         $writer->save();
 
-        return redirect('admin/writer')->with('massege', 'Yazar Başarıyla eklendi');
+        return redirect('admin/writer')->with('message', 'Yazar Başarıyla eklendi');
     }
 
     /**
@@ -73,7 +73,9 @@ class WritersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $writer = Writer::find($id);
+
+        return view('admin.writers.edit', compact('writer'));
     }
 
     /**
@@ -83,9 +85,19 @@ class WritersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        //
+        $writer = Writer::find($id);
+
+        $data = request()->validate([
+            'name' => 'required|string'
+        ]);
+
+        $writer->name = $data['name'];
+
+        $writer->update();
+
+        return redirect('admin/writer')->with('message', 'Yazar Başarıyla eklendi');
     }
 
     /**
@@ -96,6 +108,10 @@ class WritersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $writer = Writer::find($id);
+
+        $writer->delete();
+
+        return redirect('admin/writer')->with('message', 'Yazar Başarıyla silindi');
     }
 }

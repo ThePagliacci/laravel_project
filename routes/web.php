@@ -27,7 +27,7 @@ Route::middleware(['auth'])->prefix('comments')->group(function () { //kullanıc
     Route::delete('/{comment}/delete', [App\Http\Controllers\CommentsController::class,'destroy']);
 });
 
-Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
+Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () { /// route resourse grouplanmak lazim
     Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
 
     Route::get('book', [App\Http\Controllers\Admin\BooksController::class, 'index']);
@@ -41,14 +41,17 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('add-genre', [App\Http\Controllers\Admin\BookGenresController::class, 'create']);
     Route::post('add-genre', [App\Http\Controllers\Admin\BookGenresController::class, 'store']);
     Route::get('edit-genre/{genre_id}', [App\Http\Controllers\Admin\BookGenresController::class, 'edit']);
-    Route::get('edit-genre/{genre_id}', [App\Http\Controllers\Admin\BookGenresController::class, 'edit']);
     Route::put('update-genre/{genre_id}', [App\Http\Controllers\Admin\BookGenresController::class, 'update']);
     Route::get('delete-genre/{genre_id}', [App\Http\Controllers\Admin\BookGenresController::class, 'destroy']);
 
     Route::get('writer', [App\Http\Controllers\Admin\WritersController::class, 'index']);
     Route::get('add-writer', [App\Http\Controllers\Admin\WritersController::class, 'create']);
     Route::post('add-writer', [App\Http\Controllers\Admin\WritersController::class, 'store']);
+    Route::get('edit-writer/{writer_id}', [App\Http\Controllers\Admin\WritersController::class, 'edit']);
+    Route::put('update-writer/{writer_id}', [App\Http\Controllers\Admin\WritersController::class, 'update']);
+    Route::get('delete-writer/{writer_id}', [App\Http\Controllers\Admin\WritersController::class, 'destroy']);
 
+    
 
 });
 
