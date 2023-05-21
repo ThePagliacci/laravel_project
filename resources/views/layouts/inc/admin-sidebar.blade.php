@@ -19,6 +19,20 @@
                         <a class="nav-link" href="{{ url('admin/book') }}">Kitap Göster</a>
                     </nav>
                 </div>
+
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseTür" aria-expanded="false" aria-controls="collapseTür">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    kitap türleri
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseTür" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{ url('admin/add-genre') }}">kitap Tür Ekle</a>
+                        <a class="nav-link" href="{{ url('admin/genres') }}">Kitap Türler Göster</a>
+                    </nav>
+                </div>
+
+
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                     <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                     Pages

@@ -32,6 +32,19 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('book', [App\Http\Controllers\Admin\BooksController::class, 'index']);
     Route::get('add-book', [App\Http\Controllers\Admin\BooksController::class, 'create']);
     Route::post('add-book', [App\Http\Controllers\Admin\BooksController::class, 'store']);
+    Route::get('edit-book/{book_id}', [App\Http\Controllers\Admin\BooksController::class, 'edit']);
+    Route::put('update-book/{book_id}', [App\Http\Controllers\Admin\BooksController::class, 'update']);
+    Route::get('delete-book/{book_id}', [App\Http\Controllers\Admin\BooksController::class, 'destroy']);
+
+    Route::get('genres', [App\Http\Controllers\Admin\BookGenresController::class, 'index']);
+    Route::get('add-genre', [App\Http\Controllers\Admin\BookGenresController::class, 'create']);
+    Route::post('add-genre', [App\Http\Controllers\Admin\BookGenresController::class, 'store']);
+    Route::get('edit-genre/{genre_id}', [App\Http\Controllers\Admin\BookGenresController::class, 'edit']);
+    Route::get('edit-genre/{genre_id}', [App\Http\Controllers\Admin\BookGenresController::class, 'edit']);
+    Route::put('update-genre/{genre_id}', [App\Http\Controllers\Admin\BookGenresController::class, 'update']);
+    Route::put('delete-genre/{genre_id}', [App\Http\Controllers\Admin\BookGenresController::class, 'destroy']);
+
+
 });
 
 Auth::routes();

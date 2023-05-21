@@ -5,10 +5,9 @@
 <div class="container-fluid px-4">
     <div class="card mt-4">
     <div class="card-header">
-        <h4>Kitap Ekle</h4>
+        <h4>Kitap düzenle</h4>
     </div>
     <div class="card-body">
-          
         @if ($errors->any())
         <div class="alert alert-danger">
          @foreach ($errors->all() as $error)
@@ -17,13 +16,12 @@
         </div>
         @endif
 
-
-        <form action="{{ url('admin/add-book') }}" method="POST" enctype="multipart/form-data" >
+        <form action="{{ url('admin/update-book/'.$book->id) }}" method="POST" enctype="multipart/form-data" >
             @csrf
-
+            @method('PUT')
             <div class="mb-3">
                 <label>Kitap Adi</label>
-                <input type="text" name="name" class="form-control">
+                <input type="text" name="name" value="{{ $book->name }}" class="form-control">
             </div>
             <div class="mb-3">
                 <label for="">Fotoğraf</label>
@@ -33,25 +31,24 @@
             <div class="mb-3">
                 <label>yazar Adi</label><br>
 
-                <select name="writer" id="writer">
+                <select name="writer_id" id="writer_id">
                     @foreach ($writers as $writer)
-                    <option value="{{ $writer->id ?? '' }}">{{ $writer->name ?? '' }}</option>
+                    <option value="{{ $writer->id ?? '' }}"{{ old('writer', $writer->id ) == $book->writer_id ? 'selected' : '' }}  >{{ $writer->name ?? '' }}</option>
                     @endforeach
                 </select> <br>
 
             </div>
             <div class="mb-3">
                 <label>türü Adi</label><br>
-
-                <select name="bookgenre" id="bookgenre">
+                <select name="genre_id" id="genre_id">
                     @foreach ($bookGenres as $bookGenre)
-                    <option value="{{ $bookGenre->id ?? '' }}">{{ $bookGenre->name ?? '' }}</option>
+                    <option value="{{ $bookGenre->id ?? '' }}" {{ old('bookgenre', $bookGenre->id ) == $book->genre_id ? 'selected' : '' }} >{{ $bookGenre->name ?? '' }}</option>
                     @endforeach
                 </select> <br>
             </div>
 
             <div class="col-md-6">
-                <button type="submit" class="btn btn-primary" >Kitap Kaydet</button>
+                <button type="submit" class="btn btn-primary" >düzenlemeleri Kaydet</button>
             </div>
 
         </form>
