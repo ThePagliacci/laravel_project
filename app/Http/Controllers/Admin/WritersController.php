@@ -28,9 +28,7 @@ class WritersController extends Controller
      */
     public function create()
     {
-        $writers = Writer::all();
-
-        return view('admin.writers.create', compact('writers'));
+        return view('admin.writers.create');
     }
 
     /**

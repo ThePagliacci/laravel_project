@@ -51,7 +51,12 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () { ///
     Route::put('update-writer/{writer_id}', [App\Http\Controllers\Admin\WritersController::class, 'update']);
     Route::get('delete-writer/{writer_id}', [App\Http\Controllers\Admin\WritersController::class, 'destroy']);
 
-    
+    Route::get('comment', [App\Http\Controllers\Admin\CommentController::class, 'index']);
+    Route::get('add-comment', [App\Http\Controllers\Admin\CommentController::class, 'create']);
+    Route::post('add-comment', [App\Http\Controllers\Admin\CommentController::class, 'store']);
+    Route::get('edit-comment/{comment_id}', [App\Http\Controllers\Admin\CommentController::class, 'edit']);
+    Route::put('update-comment/{comment_id}', [App\Http\Controllers\Admin\CommentController::class, 'update']);
+    Route::get('delete-comment/{comment_id}', [App\Http\Controllers\Admin\CommentController::class, 'destroy']);
 
 });
 
