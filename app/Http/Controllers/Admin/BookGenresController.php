@@ -16,7 +16,7 @@ class BookGenresController extends Controller
     public function index()
     {
         $bookGenres = BookGenre::all();
-        return view('admin.genres.index');
+        return view('admin.genres.index', compact('bookGenres'));
     }
 
     /**

@@ -25,7 +25,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($genres as $genre)
+                @foreach ($bookGenres as $genre)
                 <tr>
 
                 <td>{{ $genre->id }}</td>
