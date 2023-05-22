@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Kitap')
+@section('title', 'Kitap türü')
 @section('content')
 
 <div class="container-fluid px-4">

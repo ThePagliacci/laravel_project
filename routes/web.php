@@ -58,6 +58,13 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () { ///
     Route::put('update-comment/{comment_id}', [App\Http\Controllers\Admin\CommentController::class, 'update']);
     Route::get('delete-comment/{comment_id}', [App\Http\Controllers\Admin\CommentController::class, 'destroy']);
 
+    Route::get('user', [App\Http\Controllers\Admin\UserController::class, 'index']);
+    Route::get('add-user', [App\Http\Controllers\Admin\UserController::class, 'create']);
+    Route::post('add-user', [App\Http\Controllers\Admin\UserController::class, 'store']);
+    Route::get('edit-user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'edit']);
+    Route::put('update-user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'update']);
+    Route::get('delete-user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'destroy']);
+
 });
 
 Auth::routes();

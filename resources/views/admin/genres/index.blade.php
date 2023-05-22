@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Blog Dashboard')
+@section('title', 'Kitap türü')
 @section('content')
 
 

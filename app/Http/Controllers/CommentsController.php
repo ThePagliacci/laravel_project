@@ -101,7 +101,7 @@ class CommentsController extends Controller
         $comment-> book_id = $validatedData['book_id'];
         $comment -> user_id = Auth::user()->id;
         
-        $comment->save();
+        $comment->update();
         return redirect('/comments')->with('message', 'Yorum Başarıyla Düzenlendi');
     }
 

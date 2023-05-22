@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Blog Dashboard')
+@section('title', 'Kitaplar')
 @section('content')
 
 
@@ -58,6 +58,4 @@
     </div>
 
 </div>
-
-
 @endsection
