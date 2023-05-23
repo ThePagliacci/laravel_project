@@ -25,7 +25,6 @@ class BooksController extends Controller
         $books = Book::all();
         return view('admin.books.index', compact('books')); 
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -39,7 +38,6 @@ class BooksController extends Controller
         
         return view('admin.books.create', compact('books', 'bookGenres', 'writers'));
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -62,9 +60,7 @@ class BooksController extends Controller
             $file->move('uploads/category/', $filename);
             $book->image = $filename;
         }
-        
         $book->save();
-
         return redirect('/admin/book')->with('message', 'kategori Başarıyla Eklendi');
     }
 
@@ -87,14 +83,12 @@ class BooksController extends Controller
      */
     public function edit($id)
     {
-
         $book = Book::find($id);
         $bookGenres = BookGenre::all();
         $writers = Writer::all();
 
         return view('admin.books.edit', compact('book', 'bookGenres', 'writers'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -124,9 +118,7 @@ class BooksController extends Controller
             $file->move('uploads/category/', $filename);
             $book->image = $filename;
         }
-        
         $book->update();
-
         return redirect('/admin/book')->with('message', 'kategori Başarıyla Düzenlendi');
     }
 

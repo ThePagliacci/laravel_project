@@ -96,7 +96,6 @@ class UserController extends Controller
 
         return redirect('admin/user')->with('message', 'Kullanıcı Başarıyla düzenlendi');
     }
-
     /**
      * Remove the specified resource from storage.
      *

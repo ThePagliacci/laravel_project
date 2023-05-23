@@ -26,7 +26,7 @@ class BookGenresController extends Controller
      */
     public function create()
     {
-        return view('admin.genres.create', compact('bookGenres'));
+        return view('admin.genres.create');
     }
 
     /**
@@ -68,7 +68,6 @@ class BookGenresController extends Controller
     public function edit($id)
     {
         $bookGenre = BookGenre::find($id);
-
         return view('admin.genres.edit', compact('bookGenre'));
     }
 

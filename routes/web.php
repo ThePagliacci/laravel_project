@@ -1,12 +1,8 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
-
-
 Route::get('/', function (){
     return view('welcome');
 });
-
 
 //tamamlama gerek
 Route::get('anasayfa', [App\Http\Controllers\BooksController::class, 'index'])->name('blog');
@@ -68,9 +64,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () { ///
 });
 
 Auth::routes();
-
 Route::resource('user', UserController::class);
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //front end routes

@@ -57,8 +57,6 @@ class CommentController extends Controller
             'user_id' => $data['user_id'],
             'book_id' => $data['book_id']
         ]);
-
-
         $comment->save();
 
         return redirect('admin/comment')->with('message', 'Yorum Başarıyla Eklendi');
@@ -117,7 +115,6 @@ class CommentController extends Controller
 
         return redirect('admin/comment')->with('message', 'Yorum Başarıyla düzenlendi');
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -127,9 +124,7 @@ class CommentController extends Controller
     public function destroy($id)
     {
         $comment = Comment::find($id);
-
         $comment->delete();
-
         return redirect('admin/comment')->with('message', 'Yorum Başarıyla silindi');
     }
 }
