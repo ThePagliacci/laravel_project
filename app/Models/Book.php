@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Book extends Model
 {
     use HasFactory;
-
     protected $guraded = [];
     protected $table = 'books';
     protected $fillable = [
@@ -19,7 +18,6 @@ class Book extends Model
         'writer_id',
         'genre_id'
     ];
-
 
     public function writer(): BelongsTo
     {

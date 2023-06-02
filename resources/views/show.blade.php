@@ -49,12 +49,9 @@
                     <div class="col-8 text-right">
                         <nav class="site-navigation" role="navigation">
                             <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block mb-0">
-                                <li><a href="category.html">Anasayfa</a></li>
-                                <li><a href="category.html"></a></li>
-                                <li><a href="category.html">Yazarlar</a></li>
-                                <li><a href="category.html"></a></li>
-                                <li><a href="category.html"></a></li>
-                                <li><a href="category.html">Giriş</a></li>
+                                <li><a href="{{ route('blog') }}">Anasayfa</a></li>
+                                <li><a href="{{ route('yazar') }}">Yazarlar</a></li>
+                                <li><a href="/login">Giriş</a></li>
                                 <li class="d-none d-lg-inline-block"><a href="#" class="js-search-toggle"><span class="icon-search"></span></a></li>
                             </ul>
                         </nav>
@@ -67,9 +64,7 @@
             <div class="container">
     
                 <div class="row blog-entries element-animate">
-    
                     <div class="col-md-12 col-lg-8 main-content">
-    
                         <div class="post-content-body">
                             <div class="row mb-5 mt-5">
                                 <div class="col-md-12 mb-4">
@@ -85,7 +80,6 @@
                             <div class="pt-5">
                                 <h3 class="mb-5">Comments</h3>
                                 @foreach ($book->comments as $comment)
-
                                 <ul class="comment-list">
                                     <li class="comment">
                                         <div class="vcard">
@@ -94,13 +88,11 @@
                                         <div class="comment-body">
                                             <h3>{{ $comment->user->name }} </h3>
                                             <div class="meta">{{ $comment->created_at->format('Y-m-d H:i:s') }}</div>
-                                                </div>
-
+                                        </div>
                                             <p>{{ $comment->description }}</p>
                                         </div>
                                     </li>
-
-                                    @if (Auth::user()->id == $comment->user_id)
+                                    @if (Auth::check() && Auth::user()->id == $comment->user_id)
                                     <form action="/comments/{{ $comment->id }}/edit">
                                         @csrf
                                         <a href=""><p>Edit</p></a>
@@ -112,11 +104,8 @@
                                     </form>
                                     @endif
                                     @endforeach
-                                
                                     @endif
-
                                 </ul>
- 
                         </div>
                         </div>
                     </div>
