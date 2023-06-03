@@ -53,7 +53,7 @@
                             <li><a href="{{ route('blog') }}">Anasayfa</a></li>
                             <li><a href="{{ route('yazar') }}">Yazarlar</a></li><li>
                                 <a href="{{ route('aboutus') }}">Hakkımızda</a></li>
-                            <li><a href="/login">Giriş</a></li>
+                            <li><a href="/home">Giriş</a></li>
                             <li class="d-none d-lg-inline-block"><a href="#" class="js-search-toggle"><span class="icon-search"></span></a></li>
                         </ul>
                     </nav>

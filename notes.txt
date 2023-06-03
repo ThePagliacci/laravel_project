@@ -1,0 +1,37 @@
+comment old:
+                                @foreach ($book->comments as $comment)
+                                <ul class="comment-list">
+                                    <li class="comment">
+                                        <div class="comment-body">
+                                            <h3>{{ $comment->user->name }} </h3>
+                                            <div class="meta">{{ $comment->created_at->format('Y-m-d H:i:s') }}</div>
+                                        </div>
+                                            <p>{{ $comment->description }}</p>
+                                        </div>
+                                    </li>
+                                    @if (Auth::check() && Auth::user()->id == $comment->user_id)
+                                    <form action="/comments/{{ $comment->id }}/edit">
+                                        @csrf
+                                        <a href=""><p>Edit</p></a>
+                                    </form>
+                                    <form action="/comments/{{ $comment->id }}/delete" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <a href=""><p>Delete</p></a>
+                                    </form>
+                                    @endif
+                                    @endforeach
+
+
+
+ana sayfa yazar image:
+                    <div class="post-meta align-items-center text-left clearfix">
+                        <figure class="author-figure mb-0 mr-3 float-left">
+                            <img src="Hannibal-Cinerituellllllll.png" alt="Image" class="img-fluid">
+                        </figure>
+                        <span class="d-inline-block mt-1">
+                            
+                         <a href="{{ route('writer.show', ['writer_id' => $book->writer->id]) }}">
+                            {{ $book->writer->name }}
+                        </span>
+                    </div>

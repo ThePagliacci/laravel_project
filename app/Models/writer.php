@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class writer extends Model
 {
     use HasFactory;
-    protected $guraded = [];
+    protected $guarded = [];
 
     protected $table = 'writers';
     protected $fillable = [

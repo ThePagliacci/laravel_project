@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Book extends Model
 {
     use HasFactory;
-    protected $guraded = [];
+    protected $guarded = [];
     protected $table = 'books';
     protected $fillable = [
         'name',

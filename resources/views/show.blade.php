@@ -43,7 +43,7 @@
                     </div>
     
                     <div class="col-4 site-logo">
-                        <a href="index.html" class="text-black h2 mb-0">Evladiyelik Kitaplar</a>
+                        <a href="{{ route('blog') }}" class="text-black h2 mb-0">Evladiyelik Kitaplar</a>
                     </div>
     
                     <div class="col-8 text-right">
@@ -68,7 +68,7 @@
                         <div class="post-content-body">
                             <div class="row mb-5 mt-5">
                                 <div class="col-md-12 mb-4">
-                                    <img src="{{asset('website')}}/images/img_1.jpg" alt="Image placeholder" class="img-fluid rounded">
+                                    <img src="../uploads/category/{{ $book->image }}" alt="Image placeholder" class="img-fluid rounded">
                                 </div>
                             </div>
 
@@ -81,14 +81,13 @@
                                 <h3 class="mb-5">Comments</h3>
                                 @foreach ($book->comments as $comment)
                                 <ul class="comment-list">
+                                    <div class="vcard">
+                                    <h3>{{ $comment->user->name }} </h3>
+                                    </div>
+                                    <div class="comment-body">
+                                        <div class="meta">{{ $comment->created_at->format('Y-m-d H:i:s') }}</div>
+                                    </div>
                                     <li class="comment">
-                                        <div class="vcard">
-                                            <img src="{{asset('website')}}/images/person_1.jpg" alt="Image placeholder">
-                                        </div>
-                                        <div class="comment-body">
-                                            <h3>{{ $comment->user->name }} </h3>
-                                            <div class="meta">{{ $comment->created_at->format('Y-m-d H:i:s') }}</div>
-                                        </div>
                                             <p>{{ $comment->description }}</p>
                                         </div>
                                     </li>
@@ -104,6 +103,11 @@
                                     </form>
                                     @endif
                                     @endforeach
+
+
+                                    <h6>
+                                        <a href="">Add comment</a> 
+                                    </h6>
                                     @endif
                                 </ul>
                         </div>

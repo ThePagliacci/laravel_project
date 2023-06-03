@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class comment extends Model
 {
     use HasFactory;
-    protected $guraded = [];
+    protected $guarded = [];
 
     protected $table = 'comments';
     protected $fillable = [
