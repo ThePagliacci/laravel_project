@@ -22,6 +22,7 @@
                     <th>Kullanıcı adi</th>
                     <th>email</th>
                     <th>şifre</th>
+                    <th>Fotoğraf</th>
                     <th>role_as</th>
                     <th>Düzenleme</th>
                     <th>silme</th>
@@ -37,7 +38,9 @@
                 <td>{{ $user->email }}</td>
                 
                 <td>{{ $user->password }}</td>
-   
+                <td>
+                    <img src="../uploads/category/{{ $user->image }}" width="50px" height="50px" alt="">
+                </td>   
                 <td>{{ $user->role_as }}</td>
 
                 <td>

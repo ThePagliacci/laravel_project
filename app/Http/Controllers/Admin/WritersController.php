@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+
 use App\Models\Writer;
 
 
@@ -37,15 +39,27 @@ class WritersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
-        $data = request()->validate([
-            'name' => 'required|string'
+        $data = $request->validate([
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'image' => [
+                'nullable',
+                'mimes:jpeg,jpg,png'
+               ]
         ]);
 
-        $writer = Writer::create([
-            'name' => $data['name'],
-        ]); 
+        $writer = new Writer;
+        $writer->name = $data['name'];
+        $writer->description = $data['description'];
+        if($request->hasfile('image'))
+        {
+            $file = $request->file('image');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $file->move('uploads/category/', $filename);
+            $writer->image = $filename;
+        }
 
         $writer->save();
 
@@ -83,15 +97,34 @@ class WritersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update(Request $request, $id)
     {
         $writer = Writer::find($id);
 
-        $data = request()->validate([
-            'name' => 'required|string'
+        $data = $request->validate([
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'image' => [
+                'nullable',
+                'mimes:jpeg,jpg,png'
+               ]
         ]);
 
         $writer->name = $data['name'];
+        $writer->description = $data['description'];
+        if($request->hasfile('image'))
+        {
+            $destination = 'uploads/category/'.$writer->image;
+            if(File::exists($destination))
+            {
+                File::delete($destination);
+            }
+
+            $file = $request->file('image');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $file->move('uploads/category/', $filename);
+            $writer->image = $filename;
+        }
 
         $writer->update();
 

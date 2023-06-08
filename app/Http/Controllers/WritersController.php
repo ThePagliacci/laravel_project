@@ -20,7 +20,7 @@ class WritersController extends Controller
 
     public function index()
     {
-        $writers = Writer::select('name')->get();
+        $writers = Writer::all();
 
         return view('writers.index', compact('writers'));
     }

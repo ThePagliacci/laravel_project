@@ -31,6 +31,11 @@
                 <input type="password" name="password"value="{{ $user->password }}" class="form-control"/>
             </div>
             <div class="mb-3">
+                <label for="">Fotoğraf</label>
+                <input type="file" name="image" class="form-control"/>
+            </div>
+            
+            <div class="mb-3">
                 <label for="">Role_as</label>
                 <br>
                 <select value = "{{ $user->role_as }}" name="role_as" id="role_as">

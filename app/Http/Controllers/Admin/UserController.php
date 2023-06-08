@@ -38,14 +38,20 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
-        $request->validated();
-        
-        $user = User::create([
-            'name' => $request->input('name'),
-            'email' => $request->input('email'),
-            'password' => $request->input('password'),
-            'role_as' => $request->input('role_as'),
-        ]);
+        $data = $request->validated();
+        $user  = new User;
+        $user->name = $data['name'];
+        $user->name = $data['email'];
+        $user->name = $data['password'];
+        $user->name = $data['role_as'];
+
+        if($request->hasfile('image'))
+        {
+            $file = $request->file('image');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $file->move('uploads/category/', $filename);
+            $user->image = $filename;
+        }
 
         $user->save();
 
@@ -92,6 +98,20 @@ class UserController extends Controller
         $user->email =$validatedData['email'];
         $user->password =$validatedData['password'];
         $user->role_as =$validatedData['role_as'];
+        if($request->hasfile('image'))
+        {
+            $destination = 'uploads/category/'.$user->image;
+            if(File::exists($destination))
+            {
+                File::delete($destination);
+            }
+
+            $file = $request->file('image');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $file->move('uploads/category/', $filename);
+            $user->image = $filename;
+        }
+
         $user->update();
 
         return redirect('admin/user')->with('message', 'Kullanıcı Başarıyla düzenlendi');

@@ -3,6 +3,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function (){
     return view('welcome');
 });
+Route::get('/denemek', function (){
+    return view('comments.denemekEdit');
+});
 
 //tamamlama gerek
 Route::get('anasayfa', [App\Http\Controllers\BooksController::class, 'index'])->name('blog');

@@ -29,8 +29,8 @@ class BookFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'image' => null,
-            'writer_id' => $this->faker->numberBetween(1, 2),
-            'genre_id' => $this->faker->numberBetween(1, 2),
+            'writer_id' => $this->faker->numberBetween(1, 3),
+            'genre_id' => $this->faker->numberBetween(1, 3),
             'created_at' => now(),
         ];
     }

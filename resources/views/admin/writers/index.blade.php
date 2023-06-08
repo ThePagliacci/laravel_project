@@ -20,6 +20,8 @@
                 <tr>
                     <th>Id</th>
                     <th>Yazar adi</th>
+                    <th>Yazar Tanımı</th>
+                    <th>Fotoğraf</th>
                     <th>Düzenleme</th>
                     <th>silme</th>
                 </tr>
@@ -30,6 +32,10 @@
  
                 <td>{{ $writer->id }}</td>
                 <td>{{ $writer->name }}</td>
+                <td>{{ $writer->description }}</td>
+                <td>
+                    <img src="../uploads/category/{{ $writer->image }}" width="50px" height="50px" alt="">
+                </td>
                 <td>
                     <a href="{{ url('admin/edit-writer/'.$writer->id) }}" class="btn btn-success">düzenleme</a>
                 </td>

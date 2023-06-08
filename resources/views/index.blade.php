@@ -3,6 +3,7 @@
 
 @if (session('message'))
 <div class="alert alert-success">{{ session('message') }}</div>
+
 @endif
     <div class="site-section">
         <div class="container">
@@ -14,8 +15,8 @@
 
          <div class="row">
             <div class="col-lg-4 mb-4">
-                @foreach ($books as $book )
             <div class="entry2">
+                @foreach ($books as $book )
                 <a href="{{ route('book.show', ['book' =>$book->id]) }}">
                     <img src="../uploads/category/{{ $book->image }}" alt="Image" class="img-fluid rounded" >
                 </a>
@@ -34,12 +35,13 @@
                             {{ $book->name }}
                          </a>
                     </h2>
-                </div>
-            </div>
-            @endforeach
-          </div>
-       </div>
 
+                </div>
+                @endforeach
+
+            </div>
+          </div>
+       </div> 
         </div>
     </div>
 @endsection

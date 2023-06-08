@@ -35,3 +35,70 @@ ana sayfa yazar image:
                             {{ $book->writer->name }}
                         </span>
                     </div>
+
+
+pagination:                         <span>1</span>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <span>...</span>
+                        <a href="#">15</a>
+
+
+
+comment body: <body>
+
+    <form action="/comments" method="post" enctype="multipart/form-data">
+        @csrf
+
+        Aşağıda yorumunuz yazın:
+        <input name="description" type="text">
+        <br>
+        kitap adi:
+        <select name="book_id" id="book">
+            @foreach ($books as $book)
+            <option value="{{ $book->id ?? '' }}">{{ $book->name ?? '' }}</option>
+
+            @endforeach
+        </select> <br>
+
+
+
+        <button>gönder</button>
+
+
+     @foreach ($errors->all() as $message) {
+            {{$message}}
+        }
+
+        @endforeach
+
+    </form>
+
+</body>
+comment edit: <body>
+
+    <form action="/comments/{{ $comment->id }}" method="post" enctype="multipart/form-data">
+        @csrf
+        @method('POST')
+        Aşağıda yorumunuzu düzenleyin:
+        <input name="description" type="text" value="{{ old('description', $comment->description) }}">
+        <br>
+        kitap adi:
+        <select name="book_id" id="book">
+            @foreach ($books as $book)
+            <option value="{{ $book->id }}" {{ old('book_id', $comment->book_id) == $book->id ? 'selected' : '' }}>{{ $book->name }}</option>
+            @endforeach
+        </select> <br>
+    <button type="submit">düzenlemeleri kaydet</button><br>
+
+
+    @foreach ($errors->all() as $message) {
+        {{$message}}
+    }
+
+    @endforeach
+
+    </form>
+
+</body>

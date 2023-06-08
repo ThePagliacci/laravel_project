@@ -12,7 +12,9 @@ class writer extends Model
 
     protected $table = 'writers';
     protected $fillable = [
-        'name'
+        'name',
+        'image',
+        'description'
     ];
 
 
