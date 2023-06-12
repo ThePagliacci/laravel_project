@@ -1,34 +1,57 @@
 @extends('layouts.website')
+@section('title')
+    Hakkımızda
+@endsection
 @section('content')
-    <div class="about-section">
-        <h1>Hakkımızda</h1>
-        <p></p>
-        <p></p>
-    </div>
-
-    <h2 style="text-align:center">Takımımız</h2>
-    <div class="row">
-        <div class="column">
-            <div class="card">
-                <img src="bc.png" alt="Hatice" style="width:30%">
-                <div class="container">
-                    <h2>Hatice Sezgin</h2>
-                    <p class="title">Frontend Developer</p>
-                    <p>Fırat Üniversitesi Yazılım Mühendisliği öürencisi </p>
+<div class="site-cover site-cover-sm same-height overlay single-page" style="background-image: url('{{ asset('website') }}/images/img_4.jpg');">
+    <div class="container">
+        <div class="row same-height justify-content-center">
+            <div class="col-md-12 col-lg-10">
+                <div class="post-entry text-center">
+                    <h1 class="">Hakkımızda</h1>
+                    <p class="lead mb-4 text-white">Bir Tutam Kitap Kokusu</p>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
-        <div class="column">
-            <div class="card">
-                <img src="ccb.png" alt="Bushra" style="width:60%">
-                <div class="container">
-                    <h2>Bushra Rakıa</h2>
-                    <p class="title">Backend developer</p>
-                    <p>Fırat Üniversitesi Yazılım Mühendisliği Öğrencisi </p>
+<div class="site-section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 order-md-2">
+                <img src="Hannibal-Cinerituellllllll.png" alt="Image" class="img-fluid">
+
+            </div>
+            <li class="col-md-5 mr-auto order-md-1">
+                <h1>Biz Kimiz</h1>
+                <p><h5>Hatice Sezgin</h5>
+                       Fırat üniversitesi yazılım mühendisliği 2.sınıf öğrencisi
+                    sitenin frontend kısmı ile ilgilemiş kişi.</p>
+                <p><h5>Bushra Rakia</h5>
+                    Fırat üniversitesi yazılım mühendisliği 2.sınıf öğrencisi
+                        sitenin backend kısmı ile ilgilemiş kişi.</p>
+                <ul class="ul-check list-unstyled success"></ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="site-section bg-white">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-md-5">
+                <div class="subscribe-1 ">
+                    <h2>Abone olun</h2>
+                    <p class="mb-5">Daha fazla içerik ve güncel haberler için abone olun sizi anında haberdar edelim.</p>
+                    <form action="#" class="d-flex">
+                        <input type="text" class="form-control" placeholder="Enter your email address">
+                        <input type="submit" class="btn btn-primary" value="Subscribe">
+                    </form>
                 </div>
             </div>
         </div>
-
     </div>
+</div>
 @endsection

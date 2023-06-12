@@ -57,7 +57,7 @@ class CommentsController extends Controller
             'user_id' => Auth::user()->id
         ]);
 
-        return redirect('/comments')->with('message', 'Yorum Başarıyla Eklendi');
+        return redirect()->route('book.show', ['book' => $request->input('book_id')])->with('message', 'Yorum Başarıyla Eklendi');
     }
     /**
      * Display the specified resource.
@@ -102,7 +102,7 @@ class CommentsController extends Controller
         $comment -> user_id = Auth::user()->id;
         
         $comment->update();
-        return redirect('/comments')->with('message', 'Yorum Başarıyla Düzenlendi');
+        return redirect()->route('book.show', ['book' => $request->input('book_id')])->with('message', 'Yorum Başarıyla düzenlendi');
     }
 
     /**
@@ -116,6 +116,6 @@ class CommentsController extends Controller
         $comment = Comment::find($id);
         $comment->delete();
         
-        return redirect('/comments')->with('message', 'Yorum Başarıyla Silindi');
+        return redirect()->route('book.show', ['book' => $request->input('book_id')])->with('message', 'Yorum Başarıyla silindi.');
     }
 }

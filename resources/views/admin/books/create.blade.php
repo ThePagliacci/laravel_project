@@ -33,7 +33,7 @@
             <div class="mb-3">
                 <label>yazar Adi</label><br>
 
-                <select name="writer" id="writer">
+                <select name="writer_id" id="writer_id">
                     @foreach ($writers as $writer)
                     <option value="{{ $writer->id ?? '' }}">{{ $writer->name ?? '' }}</option>
                     @endforeach
@@ -43,7 +43,7 @@
             <div class="mb-3">
                 <label>türü Adi</label><br>
 
-                <select name="bookgenre" id="bookgenre">
+                <select name="genre_id" id="genre_id">
                     @foreach ($bookGenres as $bookGenre)
                     <option value="{{ $bookGenre->id ?? '' }}">{{ $bookGenre->name ?? '' }}</option>
                     @endforeach
