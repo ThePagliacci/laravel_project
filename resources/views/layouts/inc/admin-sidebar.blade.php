@@ -19,7 +19,7 @@
                         <a class="nav-link" href="{{ url('admin/book') }}">Kitap Göster</a>
                     </nav>
                 </div>
-
+                <br>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseTür" aria-expanded="false" aria-controls="collapseTür">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     kitap türleri
@@ -31,7 +31,7 @@
                         <a class="nav-link" href="{{ url('admin/genres') }}">Kitap Türler Göster</a>
                     </nav>
                 </div>
-
+                <br>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseYazar" aria-expanded="false" aria-controls="collapseYazar">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Yazarlar
@@ -43,7 +43,7 @@
                         <a class="nav-link" href="{{ url('admin/writer') }}">Yazar Göster</a>
                     </nav>
                 </div>
-
+                <br>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseYorum" aria-expanded="false" aria-controls="collapseYorum">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Yorumlar
@@ -55,7 +55,7 @@
                         <a class="nav-link" href="{{ url('admin/comment') }}">Yorum Göster</a>
                     </nav>
                 </div>
-
+                <br>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseUsers" aria-expanded="false" aria-controls="collapseUsers">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Kullanıcılar

@@ -26,6 +26,11 @@
                 <input type="text" name="name" class="form-control">
             </div>
             <div class="mb-3">
+                <label for="">Tanım</label>
+                <textarea name="description" id="description" cols="30" rows="10" class="form-control"></textarea>
+            </div>
+
+            <div class="mb-3">
                 <label for="">Fotoğraf</label>
                 <input type="file" name="image" class="form-control"/>
             </div>

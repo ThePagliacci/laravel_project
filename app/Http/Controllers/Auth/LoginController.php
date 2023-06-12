@@ -25,11 +25,11 @@ class LoginController extends Controller
         }
         else if(Auth::user()->role_as == '0')
         {
-            return redirect('anasayfa')->with('message', 'Başarıyla giriş yapıldı');
+            return redirect('/anasayfa')->with('message', 'Başarıyla giriş yapıldı');
         }
         else
         {
-            return redirect('anasayfa');
+            return redirect('/anasayfa');
         }
     }
 

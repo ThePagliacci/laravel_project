@@ -51,9 +51,19 @@
                     <nav class="site-navigation" role="navigation">
                         <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block mb-0">
                             <li><a href="{{ route('blog') }}">Anasayfa</a></li>
-                            <li><a href="{{ route('yazar') }}">Yazarlar</a></li><li>
-                                <a href="{{ route('aboutus') }}">Hakkımızda</a></li>
-                            <li><a href="/home">Giriş</a></li>
+                            <li><a href="{{ route('yazar') }}">Yazarlar</a></li>
+                            <li><a href="{{ route('aboutus') }}">Hakkımızda</a></li>
+                            <li><a href="category.html">Contact</a></li>
+                            <li><a href="{{ route('login') }}">Giriş</a></li>
+
+                            <li><a onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                  href="{{ route('logout') }}">Çıkış</a>
+                            
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                            </li>
+
                             <li class="d-none d-lg-inline-block"><a href="#" class="js-search-toggle"><span class="icon-search"></span></a></li>
                         </ul>
                     </nav>

@@ -1,16 +1,11 @@
 <?php
 use Illuminate\Support\Facades\Route;
-Route::get('/', function (){
+Route::get('/',function (){
     return view('welcome');
 });
-Route::get('/denemek', function (){
-    return view('comments.denemekEdit');
-});
-
 //tamamlama gerek
 Route::get('anasayfa', [App\Http\Controllers\BooksController::class, 'index'])->name('blog');
 Route::get('anasayfa/{book}', [App\Http\Controllers\BooksController::class, 'show'])->name('book.show');
-
 //tamamlama gerek
 Route::get('yazar', [App\Http\Controllers\WritersController::class, 'index'])->name('yazar');
 Route::get('yazar/{writer_id}', [App\Http\Controllers\WritersController::class, 'show'])->name('writer.show');
@@ -74,3 +69,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/about',function (){
     return view('about');
 })->name('aboutus');
+
+Route::get('/contact',function (){
+    return view('contact');
+})->name('contact');
+

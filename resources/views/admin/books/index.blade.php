@@ -20,6 +20,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Kitap adi</th>
+                    <th>Kitap tanım</th>
                     <th>yazar adi</th>
                     <th>foroğraf</th>
                     <th>türü adi</th>
@@ -32,6 +33,7 @@
                 <tr>
 
                 <td>{{ $book->id }}</td>
+                <td>{{ $book->description }}</td>
                 <td>{{ $book->name }}</td>
 
                 <td>{{ $book->writer->name }}</td>
