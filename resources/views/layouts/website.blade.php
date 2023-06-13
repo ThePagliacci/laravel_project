@@ -53,7 +53,7 @@
                             <li><a href="{{ route('blog') }}">Anasayfa</a></li>
                             <li><a href="{{ route('yazar') }}">Yazarlar</a></li>
                             <li><a href="{{ route('aboutus') }}">Hakkımızda</a></li>
-                            <li><a href="category.html">Contact</a></li>
+                            <li><a href="{{ route('contactUs') }}">Contact</a></li>
                             <li><a href="{{ route('login') }}">Giriş</a></li>
 
                             <li><a onclick="event.preventDefault(); document.getElementById('logout-form').submit();"

@@ -45,7 +45,7 @@ class WritersController extends Controller
             'name' => 'required|string',
             'description' => 'required|string',
             'image' => [
-                'nullable',
+                'nullable', 
                 'mimes:jpeg,jpg,png'
                ]
         ]);

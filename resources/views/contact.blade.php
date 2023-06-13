@@ -15,19 +15,18 @@
 <body>
 <div class="wrapper">
     <div class="inner">
-        <form class="p-5 bg-light" action="/anasayfa" method="post" enctype="multipart/form-data">
+        <form action="{{ url('contact') }}" method="post" enctype="multipart/form-data">
             @csrf
             <h3>Contact Us</h3>
             <p>Daha fazlası için ve bir sorun olduğunda bize mesaj atınız.</p>
-            <label for="email" class="form-group">
-                <input name="email" id="email" type="text" class="form-control"  required>
-                <span for="email">Emailin</span>
-                <span name="email" class="border"></span>
-            </label>
-            <label class="form-group" >
+        </label>
+        <label class="form-group">
+            <span value="{{Auth::User()->id}}" for="">{{Auth::User()->email}}</span>
+            <span class="border"></span> <br><br><br>
+        </label>
+                <label for="message" class="form-group" >
                 <textarea name="message" id="message" class="form-control" required></textarea>
-                <span for="message">Mesajınız</span>
-                <span for="message" class="border"></span>
+                <span for="message" >Mesajınız</span>
             </label>
             <button type="submit" >Gönder
                 <i class="zmdi zmdi-arrow-right"></i>
@@ -39,7 +38,6 @@
         </form>
     </div>
 </div>
-
 </body>
 </html>
 @endsection

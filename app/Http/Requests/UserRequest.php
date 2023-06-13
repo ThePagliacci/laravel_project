@@ -32,7 +32,6 @@ class UserRequest extends FormRequest
                 'mimes:jpeg,jpg,png'
                ],
             'password' =>'required',
-            'message' =>'nullable|string',
             'role_as' => 'required'
         ];
     }

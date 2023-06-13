@@ -10,6 +10,11 @@ Route::get('anasayfa/{book}', [App\Http\Controllers\BooksController::class, 'sho
 Route::get('yazar', [App\Http\Controllers\WritersController::class, 'index'])->name('yazar');
 Route::get('yazar/{writer_id}', [App\Http\Controllers\WritersController::class, 'show'])->name('writer.show');
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/contactUs', [App\Http\Controllers\MessageController::class, 'create'])->name('contactUs');
+    Route::post('/contact', [App\Http\Controllers\MessageController::class, 'store']);
+});
+
 Route::middleware(['auth'])->prefix('comments')->group(function () { //kullanıcı giriş yapmadan göremez  (resource route geliştirmek?)
 
     Route::get('/', [App\Http\Controllers\CommentsController::class, 'index']);
@@ -59,6 +64,13 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () { ///
     Route::put('update-user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'update']);
     Route::get('delete-user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'destroy']);
 
+    Route::get('message', [App\Http\Controllers\Admin\MessageController::class, 'index'])->name('messages');
+    Route::get('add-message', [App\Http\Controllers\Admin\MessageController::class, 'create']);
+    Route::post('add-message', [App\Http\Controllers\Admin\MessageController::class, 'store']);
+    Route::get('edit-message/{message_id}', [App\Http\Controllers\Admin\MessageController::class, 'edit']);
+    Route::put('update-message/{message_id}', [App\Http\Controllers\Admin\MessageController::class, 'update']);
+    Route::get('delete-message/{message_id}', [App\Http\Controllers\Admin\MessageController::class, 'destroy']);
+
 });
 
 Auth::routes();
@@ -69,8 +81,3 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/about',function (){
     return view('about');
 })->name('aboutus');
-
-Route::get('/contact',function (){
-    return view('contact');
-})->name('contact');
-

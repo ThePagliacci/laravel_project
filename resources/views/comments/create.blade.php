@@ -1,7 +1,7 @@
 @extends('layouts.website')
 @section('title')
     Comment
-@endsection
+@endsection 
 @section('content')
     <section class="site-section py-lg">
         <div class="container">

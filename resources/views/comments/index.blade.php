@@ -19,9 +19,7 @@
         <br>
         user name: {{ $comment->user->name }}
             <br><br>
-
             @if (Auth::User()->id == $comment->user->id)
-
 
             <form action="/comments/{{ $comment->id }}/edit">
                 @csrf
