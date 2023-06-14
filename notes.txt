@@ -1,2 +1,51 @@
-                <input name="email" id="email" type="text" class="form-control"  required>
-                <span name="email" value="{{ Auth::User()->id}}" type="text" class="border" id="user_id">{{ Auth::User()->email }}</span>
+    <div class="site-section bg-light">
+        <div class="container">
+
+            <div class="row align-items-stretch retro-layout">
+
+                <div class="col-md-5 order-md-2">
+                    <a href="single.html" class="hentry img-1 h-100 gradient" style="background-image: url('aklindan-bir-sayi-tut-john-verdon.jpg');">
+                        <span class="post-category text-white bg-danger">Gerilim-Gizem-Polisiye</span>
+                        <div class="text">
+                            <h2>Aklından Bir Sayı Tut-
+                                John Verdon</h2>
+                            <span>6 Nisan 2023</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-7">
+
+                    <a href="single.html" class="hentry img-2 v-height mb30 gradient" style="background-image: url('0013277_gozlerini-simsiki-kapat_510-87b87a6ec82ff87d94afdc63298383ec.jpg');">
+                        <span class="post-category text-white bg-success">Gerilim-Polisiye-Gizem</span>
+                        <div class="text text-sm">
+                            <h2>Gözlerini Sımsıkı Kapat-
+                                John Verdon</h2>
+                            <span>6 Nisan 2023</span>
+                        </div>
+                    </a>
+
+                    <div class="two-col d-block d-md-flex">
+                        <a href="single.html" class="hentry v-height img-2 gradient" style="background-image: url('wi_800 (3).jpeg');">
+                            <span class="post-category text-white bg-primary">Macera-Gizem-Polisiye</span>
+                            <div class="text text-sm">
+                                <h2>sherlock holmes kitap serisi-Arthur Conan Doyle</h2>
+                                <span>6 Nisan 2023</span>
+                            </div>
+                        </a>
+                        <a href="single.html" class="hentry v-height img-2 ml-auto gradient" style="background-image: url('0000000064051-1.jpg');">
+                            <span class="post-category text-white bg-warning">Korku-Gerilim</span>
+                            <div class="text text-sm">
+                                <h2>Koku-
+                                    Patrick Süskind</h2>
+                                <span>6 Nisan 2023</span>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+ what was cut form the a tag photo?  class="hentry img-1 h-100 gradient" style="background-image: url('{{ asset('uploads/category/' . $book->image) }}');

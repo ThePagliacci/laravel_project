@@ -10,6 +10,8 @@ Route::get('anasayfa/{book}', [App\Http\Controllers\BooksController::class, 'sho
 Route::get('yazar', [App\Http\Controllers\WritersController::class, 'index'])->name('yazar');
 Route::get('yazar/{writer_id}', [App\Http\Controllers\WritersController::class, 'show'])->name('writer.show');
 
+Route::get('category/{genre_id}', [App\Http\Controllers\BookGenresController::class, 'show'])->name('genre');
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/contactUs', [App\Http\Controllers\MessageController::class, 'create'])->name('contactUs');
     Route::post('/contact', [App\Http\Controllers\MessageController::class, 'store']);

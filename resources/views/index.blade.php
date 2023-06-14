@@ -25,8 +25,8 @@
             <div class="col-md-4">
                 <a href="{{ route('book.show', ['book' =>$book->id]) }}" class="h-entry mb-30 v-height gradient" style="background-image: url('{{ asset('uploads/category/'.$book->image) }}');">
                     <div class="text">
-                        <div class="post-categories mb-3">
-                            <span class="post-category bg-danger">{{ $book->bookGenre->name }}</span>
+                            <div class="post-categories mb-3">
+                            <span class="post-category bg-danger">{{ $book->bookGenre->name }}here</span>
                         </div>
                         <h2>{{ $book->name }}</h2>
                         <h2>{{$book->writer->name}}</h2>
@@ -110,7 +110,9 @@
                     <img src="../uploads/category/{{ $book->image }}" alt="Image" class="img-fluid rounded" >
                 </a>
                 <div class="excerpt">
+                    <a href="{{ route('genre', ['genre_id' =>$book->genre_id]) }}">
                     <span class="post-category text-white bg-secondary mb-3">{{ $book->BookGenre->name }}</span>
+                    </a>
                     <div class="post-meta align-items-center text-left clearfix">
                     <span class="d-inline-block mt-1">
                     <h5>The Writer:
@@ -190,7 +192,6 @@
 
         </div>
     </div>
-
     <div class="site-section bg-lightx">
         <div class="container">
             <div class="row justify-content-center text-center">

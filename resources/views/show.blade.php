@@ -8,7 +8,9 @@
             <div class="row same-height justify-content-center">
                 <div class="col-md-12 col-lg-10">
                     <div class="post-entry text-center">
+                        <a href="{{ route('genre', ['genre_id' =>$book->genre_id]) }}">
                         <span class="post-category text-white bg-success mb-3">{{ $book->bookGenre->name }}</span>
+                    </a>
                         <h1 class="mb-4"><a href="#">{{ $book->name }} – {{ $book->writer->name }}</a></h1>
                     </div>
                 </div>
