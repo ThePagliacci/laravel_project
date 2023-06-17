@@ -3,6 +3,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',function (){
     return view('welcome');
 });
+
+Route::get('/dene',function (){
+    return view('denenme');
+});
+
 //tamamlama gerek
 Route::get('anasayfa', [App\Http\Controllers\BooksController::class, 'index'])->name('blog');
 Route::get('anasayfa/{book}', [App\Http\Controllers\BooksController::class, 'show'])->name('book.show');

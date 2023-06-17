@@ -44,27 +44,30 @@
                         <div class="pt-5">
                             <h3 class="mb-5">Comments</h3>
                             @foreach ($book->comments as $comment)
-                            <ul class="comment-list">
-                                <div class="vcard">
-                                <h3>{{ $comment->user->name }}</h3>
-                                </div>
-                                <div class="comment-body">
-                                    <div class="meta">{{ $comment->created_at->format('Y-m-d H:i:s') }}</div>
-                                </div>
+
+                            <div class="comment-list">
                                 <li class="comment">
-                                    <p>{{ $comment->description }}</p>
+                                    <div class="vcard">
+                                        <img src="{{ url('../uploads/category/'.$comment->user->image )}}" alt="Image placeholder">
+                                    </div>
+                                    <div class="comment-body">
+                                        <h3>{{ $comment->user->name }}</h3>
+                                        <div class="meta">{{ $comment->created_at->format('Y-m-d H:i:s') }}</div>
+                                        <p>{{ $comment->description }}</p>
+
+                                        @if (Auth::check() && Auth::user()->id == $comment->user_id)
+                                        <div style="display: inline;">
+                                            <a href="/comments/{{ $comment->id }}/edit"> <em>Edit</em>  </a>
+                                                <a href="/comments/{{ $comment->id }}/delete"> <em> Delete</em>  </a>
+                                            </div>
+                                        @endif
 
 
-                            @if (Auth::check() && Auth::user()->id == $comment->user_id)
-                            <div style="display: inline;">
-                                <a href="/comments/{{ $comment->id }}/edit"> <em>Edit</em>  </a>
-                                    <a href="/comments/{{ $comment->id }}/delete"> <em> Delete</em>  </a>
-                                </div>
-                            @endif
-                        </li>
-                    </ul>
+                                    </div>
+                                </li>
+                        </div>
+                        @endforeach
 
-                            @endforeach
                             <br><br><br>
                             <h6>
                                 <a href="{{ route('yorumYap') }}">  <strong> Add comment? </strong> </a> 
