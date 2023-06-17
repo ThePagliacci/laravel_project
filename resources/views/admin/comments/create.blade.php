@@ -21,7 +21,7 @@
             @csrf
             <div class="mb-3">
                 <label>Yorum:</label><br>
-                    <input type="text" name="description" class="form-control">
+                <textarea type="text" name="description" class="form-control"></textarea>
             </div>
             <div class="mb-3">
                 kitap adi:

@@ -23,7 +23,7 @@
 
             <div class="mb-3">
                 <label>Yorum:</label><br>
-                <input name="description" type="text" value="{{ old('description', $comment->description) }}">
+                <textarea type="text" name="description" class="form-control">{{ old('description', $comment->description) }}</textarea>
             </div>
             <div class="mb-3">
                 kitap adi:
