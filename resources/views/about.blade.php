@@ -19,10 +19,6 @@
 <div class="site-section bg-light">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 order-md-2">
-                <img src="Hannibal-Cinerituellllllll.png" alt="Image" class="img-fluid">
-
-            </div>
             <li class="col-md-5 mr-auto order-md-1">
                 <h1>Biz Kimiz</h1>
                 <p><h5>Hatice Sezgin</h5>
