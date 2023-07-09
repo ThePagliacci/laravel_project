@@ -1,6 +1,6 @@
 @extends('layouts.website')
 @section('title')
-    Comment Edit
+    Comment Edit 
 @endsection
 @section('content')
     <section class="site-section py-lg">
